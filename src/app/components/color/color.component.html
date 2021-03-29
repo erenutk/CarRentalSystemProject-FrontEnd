@@ -1,0 +1,11 @@
+<div class="input-group mb-3">
+    <input type="text " [(ngModel)]="filterText" class="form-control" placeholder="Aradığınız renk">
+    <!-- <button  class="btn btn-primary" type="button" id="filterText">Ara</button> -->
+  </div>
+<ul class="list-group">
+    <li *ngIf="filterText.length==0" (click)="clearCurrentColor()" routerLink="/cars" [class]="getAllColorClass()">Tüm Renkler</li>
+    <li (click)="setCurrentColor(color)" routerLink="/cars/colors/{{color.id}}"
+     [class]="getCurrentColorClass(color)" *ngFor="let color of colors |colorFilter:filterText ">{{color.name}}</li>
+</ul><br>
+
+

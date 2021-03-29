@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-4">
+    <select [(ngModel)]="brandFilter" class="form-select" placeholder="Markalar">
+      <!-- <option selected>Tüm Markalar</option> -->
+      <option *ngFor="let brand of brands" value="{{ brand.id }}">{{ brand.name }}</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <select [(ngModel)]="colorFilter" class="form-select">
+      <!-- <option selected>Tüm Renkler</option> -->
+      <option *ngFor="let color of colors" value="{{ color.id }}"> {{color.name}}</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <button 
+    routerLink="/cars/filter/{{brandFilter}}/{{colorFilter}}" class="btn btn-success">Filtrele</button>
+  </div>
+  <div class="col-md-2">
+    <button routerLink="/cars" class="btn btn-danger">Temizle</button>
+  </div>
+</div>

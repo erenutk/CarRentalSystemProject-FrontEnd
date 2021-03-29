@@ -1,0 +1,52 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Kiralık Araç Ekle</h5></div>
+            <div class="card-body">
+                <form [formGroup]="carAddForm">
+                    <div class="mb-3">
+                        <label for="name">Araç Adı</label>
+                        <div class="form-group">
+                            <input type="text" id="name" formControlName="name" class="form-control" placeholder="Araç adı">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="brandId">Marka Kodu</label>
+                        <div class="form-group">
+                             <input type="number" id=" brandId" formControlName="brandId" class="form-control" placeholder="Marka kodu">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="colorId">Renk Kodu</label>
+                        <div class="form-group">
+                            <input type="number" id="colorId" formControlName="colorId" class="form-control" placeholder="Renk kodu">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelYear">Model Yılı</label>
+                        <div class="form-group">
+                            <input type="number" id="modelYear" formControlName="modelYear" class="form-control" placeholder="Model yılı">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dailyPrice">Günlük Ücret</label>
+                        <div class="form-group">
+                            <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control" placeholder="Günlük ücret">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Açıklama</label>
+                        <div class="form-group">
+                            <input type="text" id="description" formControlName="description" class="form-control" placeholder="Açıklama">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button (click)="add()" class="btn btn-success" style="float:right">Ekle</button>
+            </div>           
+        </div>
+    </div>
+    
+</div>
+

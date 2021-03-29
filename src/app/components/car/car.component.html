@@ -1,0 +1,144 @@
+<div class="row">
+  <div class="col-md-6">
+    <app-car-filter></app-car-filter>
+  </div>
+  <div class="col-md-6">
+    <div class="input-group mb-3">
+      <input
+        
+        type="text "
+        [(ngModel)]="filterText"
+        class="form-control"
+        placeholder="Aradığınız aracı yazınız"
+      />
+      <button (click)="setCarFilter(filterText)" class="btn btn-primary" type="button" id="filterText">Ara</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div *ngIf="filterText" class="alert alert-primary">
+  {{ filterText | titlecase }} için sonuçlar
+</div>
+<br /> -->
+
+<div class="row">
+  <div
+    *ngFor="let car of cars | carFilter: carFilterText"
+    class="card"
+    style=" width: 30rem" 
+  >
+    <img *ngIf="car.imagePath"
+      src="{{ imageBasePath }}/Images/{{ car.imagePath }}"
+      class="card-img-top"
+      alt="..."
+    />
+    <img *ngIf="!car.imagePath"
+      src="{{ imageBasePath }}/Images/default.png"
+      class="card-img-top"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ car.carName }}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Marka: {{ car.brandName }}</li>
+      <li class="list-group-item">Renk: {{ car.colorName }}</li>
+      <li class="list-group-item">Fiyat: {{ car.dailyPrice }} TL</li>
+    </ul>
+    <div class="card-body">
+
+          <!-- <button class="btn btn-success btn-lg" style="float:right" >Kirala</button> -->
+          <button routerLink="/cars/car-detail/{{ car.id }}"type="button"
+           class="btn btn-warning btn-space btn-lg" style="float:right">Detaylar</button>
+       
+
+      <!-- <button  type="button" class="btn btn-light"></button> -->
+    </div>
+  </div>
+
+  <!-- <div class="card-header text-center">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner  d-flex "
+         style="height: 50vh; min-height: 20rem; max-height: 30rem">
+
+          <div *ngFor="let car of cars; index as i; first as firstImage"
+          
+          class="carousel-item align-self-center"
+            [ngClass]="{ active: firstImage }"
+          style="height: 100%; width: 100%">
+             <img
+          src="../../../assets/img/{{car.imagePath}}"
+          class=""
+          style="height: 100%; width: 100%; object-fit: contain"
+          alt="imageUrl + image.imagePath"
+        />
+          </div>
+         
+      </div>
+
+    </div>
+    <div>------------ </div>
+<table class="table">
+   
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Model Yılı</th>
+            <th>Fiyat</th>
+            <th>Açıklama</th> 
+ 
+        </tr>
+        <tr *ngFor="let car of cars"   >
+             <img  src="../../../assets/img/{{car.imagePath}}"  class="img-fluid" alt="Responsive image"> 
+          
+            <td>{{car.id}}</td>
+            <td>{{car.carName}}</td>
+            <td>{{car.brandName}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}}</td>
+            <td>{{car.description}}</td> 
+              
+        </tr>
+    </thead>
+
+    </table> -->
+
+  <!-- 
+
+    Burdan öncesi cardetail
+ -->
+
+  <!-- <img  src="../../../assets/img/{{car.imagePath}}"  class="img-fluid" alt="Responsive image"> -->
+  <!-- <table *ngIf="dataLoaded==true" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Araç Adı</th>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Model</th>
+            <th>Günlük Fiyat</th>
+            <th>Açıklama</th>
+        </tr>
+        <img *ngFor="let image of images" src="https://pazarlamasyon.com/wp-content/uploads/2020/12/Sahte-Apple-Car.jpg" 
+      class="img-fluid" alt="Responsive image">
+    </thead>
+    <tr *ngFor="let car of cars"   >
+        <img  src="../../../assets/img/{{car.imagePath}}"  class="img-fluid" alt="Responsive image">
+      
+        <td>{{car.id}}</td>
+        <td>{{car.carName}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice}}</td>
+        <td>{{car.description}}</td> 
+          
+    </tr>
+</table> -->
+  <!-- {{imageBasePath}}/Images/{{image.imagePath}}" -->
+  <!-- ../../../assets/img/73b35477-4fc1-4866-b9da-4185431985d8.PNG -->
+</div>
